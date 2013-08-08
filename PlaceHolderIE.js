@@ -1,5 +1,5 @@
 /*2013-08-07
-version 0.0
+version 0.1
 Fix IE place holder. Who said no country for old men?
 Only work with JQuery.
 Use as your old risk. 
@@ -24,6 +24,13 @@ function FixPlaceHolderIE_Input() {
             $(this).change(function () {
                 $(this).attr("realValue", $(this).val());
             });
+            
+            //Put real value back when submit.
+            var parentForm = $(this).closest("form");
+
+            parentForm.submit(function () {
+                $(this).val($(this).attr("realValue"));           
+            });
         });
 
     }
@@ -47,6 +54,13 @@ function FixPlaceHolderIE_TextArea() {
             $(this).change(function () {
                 $(this).attr("realValue", $(this).html());
             });
+            
+            //Put real value back when submit.
+            var parentForm = $(this).closest("form");
+            parentForm.submit(function () {
+                $(this).html($(this).attr("realValue"));
+            });
+
         });
 
     }

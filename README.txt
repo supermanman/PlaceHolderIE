@@ -1,0 +1,43 @@
+*************************************************************
+*---Fix IE place holder. Who said no country for old men?---*
+* Only work with JQuery                                     *
+* Use as your old risk.                                     *
+* I am willing discussion.                                  *
+https://github.com/supermanman/PlaceHolderIE                *
+*************************************************************
+--------------------------------------------	
+CHANGE LOG
+--------------------------------------------
+[20130808] v0.1: submit() event halder. Fix default submit action without touching any textbox.
+[20130807] v0.0: initial version.
+
+--------------------------------------------
+HOW TO USE 
+--------------------------------------------
+1. Add JQuery library
+ <script src="/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+ <script src="/Scripts/PlaceHolderIE.js" type="text/javascript"></script>
+2. Call the function you need somewhere: 
+	2.1 For input text: 
+	<script type="text/javascript">
+	  $(document).ready(function () {
+				FixPlaceHolderIE_Input();
+				});
+	</script>
+
+	2.2 For input textarea: 
+	<script type="text/javascript">
+	  $(document).ready(function () {
+				FixPlaceHolderIE_TextArea();
+				});
+	</script>
+--------------------------------------------
+NOTICE
+--------------------------------------------
+As there is no placeholder, the val() is used to display the content in textbox/textarea. Then we use .submit() listener to retrieve back the original value. 
+
+--------------------------------------------
+LICENSE
+--------------------------------------------
+Just use it wherenever you want. 
+Please leave my github link in the .js file. Is it required? I'd rather say yes.
