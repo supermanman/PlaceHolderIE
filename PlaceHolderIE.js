@@ -9,8 +9,11 @@ https://github.com/supermanman/PlaceHolderIE
 function FixPlaceHolderIE_Input() {
     if ($.browser.msie) {
         $(":input[type='text'],:input[type='password']").each(function () {
-            $(this).val($(this).attr("placeholder"));
-            $(this).attr("realValue", '');
+            if ($(this).val() == '') {
+                $(this).val($(this).attr("placeholder"));
+                $(this).attr("realValue",'');
+            }
+            else $(this).attr("realValue", $(this).val());
 
             $(this).focus(function () {
                 $(this).val($(this).attr("realValue"));
@@ -39,9 +42,12 @@ function FixPlaceHolderIE_Input() {
 function FixPlaceHolderIE_TextArea() {
     if ($.browser.msie) {
         $("textarea").each(function () {
-            $(this).val($(this).attr("placeholder"));
-            $(this).attr("realValue", '');
-
+            if ($(this).html() == '') {
+                $(this).html($(this).attr("placeholder"));
+                $(this).attr("realValue", '');
+            }
+            else $(this).attr("realValue", $(this).html());
+            
             $(this).focus(function () {
                 $(this).html($(this).attr("realValue"));
             });
