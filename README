@@ -8,7 +8,9 @@ https://github.com/supermanman/PlaceHolderIE                *
 --------------------------------------------	
 CHANGE LOG
 --------------------------------------------
-[20130808] v0.1: submit() event halder. Fix default submit action without touching any textbox.
+[20130809] v0.3: Password - text transformation. Support show password placeholder as text. Support 1-paste integration.
+[20130808] v0.2: Handle default value.
+[20130808] v0.1: submit() event handle. Fix default submit action without touching any textbox.
 [20130807] v0.0: initial version.
 
 --------------------------------------------
@@ -18,19 +20,28 @@ HOW TO USE
  <script src="/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
  <script src="/Scripts/PlaceHolderIE.js" type="text/javascript"></script>
 2. Call the function you need somewhere: 
-	2.1 For input text: 
+	
+	2.1 For 1-paste initialization: 
+	<script type="text/javascript">
+	  $(document).ready(function () {
+				FixPlaceHolderIE();
+				});
+	</script>
+	2.2 For input text and password: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_Input();
 				});
 	</script>
 
-	2.2 For input textarea: 
+	2.3 For input textarea: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_TextArea();
 				});
 	</script>
+	
+
 --------------------------------------------
 NOTICE
 --------------------------------------------
@@ -39,5 +50,5 @@ As there is no placeholder, the val() is used to display the content in textbox/
 --------------------------------------------
 LICENSE
 --------------------------------------------
-Just use it wherenever you want. 
+Just use it wherever you want. 
 Please leave my github link in the .js file. Is it required? I'd rather say yes.

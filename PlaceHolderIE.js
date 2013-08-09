@@ -1,27 +1,41 @@
-/*2013-08-07
-version 0.1
+/*2013-08-09
+version 0.3
 Fix IE place holder. Who said no country for old men?
 Only work with JQuery.
 Use as your old risk. 
-I am willing discussion.
+I am open for discussion.
 https://github.com/supermanman/PlaceHolderIE
 */
+function FixPlaceHolderIE() {
+    FixPlaceHolderIE_Input();
+    FixPlaceHolderIE_TextArea();
+}
 function FixPlaceHolderIE_Input() {
     if ($.browser.msie) {
         $(":input[type='text'],:input[type='password']").each(function () {
             if ($(this).val() == '') {
                 $(this).val($(this).attr("placeholder"));
-                $(this).attr("realValue",'');
+                $(this).attr("realValue", '');
+                if ($(this).attr("type").toLowerCase() == 'password') {
+                    $(this).attr("isPassword",'1');
+                    $(this).attr("type", 'text');
+                }
+                else $(this).attr("isPassword", '0');
             }
             else $(this).attr("realValue", $(this).val());
 
             $(this).focus(function () {
                 $(this).val($(this).attr("realValue"));
+                if ($(this).attr("isPassword")==true) 
+                    $(this).attr("type", 'password');
             });
 
             $(this).focusout(function () {
-                if ($(this).val() == '')
+                if ($(this).val() == '') {
                     $(this).val($(this).attr("placeholder"));
+                    if ($(this).attr("isPassword")=='1')
+                        $(this).attr("type", 'text');
+                }
             });
 
             $(this).change(function () {
@@ -35,9 +49,7 @@ function FixPlaceHolderIE_Input() {
                 $(this).val($(this).attr("realValue"));           
             });
         });
-
     }
-
 }
 function FixPlaceHolderIE_TextArea() {
     if ($.browser.msie) {
@@ -66,9 +78,6 @@ function FixPlaceHolderIE_TextArea() {
             parentForm.submit(function () {
                 $(this).html($(this).attr("realValue"));
             });
-
         });
-
     }
-
 }
