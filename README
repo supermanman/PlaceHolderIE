@@ -21,20 +21,20 @@ HOW TO USE
  <script src="PlaceHolderIE.js" type="text/javascript"></script>
 2. Call the function you need somewhere: 
 	
-	2.1 For 1-paste initialization: 
+	* For 1-paste initialization: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE();
 				});
 	</script>
-	2.2 For input text and password only: 
+	* For input text and password only: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_Input();
 				});
 	</script>
 
-	2.3 For textarea only: 
+	* For textarea only: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_TextArea();
@@ -45,7 +45,7 @@ HOW TO USE
 --------------------------------------------
 NOTICE
 --------------------------------------------
-As there is no placeholder, the val() is used to display the content in textbox/textarea. Then we use .submit() listener to retrieve back the original value. 
+As there is no placeholder, the val() is used to display the content inside textboxes/textareas. Then we use .submit() handle to retrieve back the original value. 
 
 --------------------------------------------
 LICENSE
