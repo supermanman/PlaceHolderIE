@@ -2,7 +2,7 @@
 *---Fix IE place holder. Who said no country for old men?---*
 * Only work with JQuery                                     *
 * Use as your old risk.                                     *
-* I am willing discussion.                                  *
+* I am willing 4 discussion.                                *
 https://github.com/supermanman/PlaceHolderIE                *
 *************************************************************
 --------------------------------------------	
@@ -16,9 +16,9 @@ CHANGE LOG
 --------------------------------------------
 HOW TO USE 
 --------------------------------------------
-1. Add JQuery library
- <script src="/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
- <script src="/Scripts/PlaceHolderIE.js" type="text/javascript"></script>
+1. Add JQuery and PlaceHolderIE library
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+ <script src="PlaceHolderIE.js" type="text/javascript"></script>
 2. Call the function you need somewhere: 
 	
 	2.1 For 1-paste initialization: 
@@ -27,14 +27,14 @@ HOW TO USE
 				FixPlaceHolderIE();
 				});
 	</script>
-	2.2 For input text and password: 
+	2.2 For input text and password only: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_Input();
 				});
 	</script>
 
-	2.3 For input textarea: 
+	2.3 For textarea only: 
 	<script type="text/javascript">
 	  $(document).ready(function () {
 				FixPlaceHolderIE_TextArea();
